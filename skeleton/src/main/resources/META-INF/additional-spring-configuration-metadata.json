@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "feign.client.retry.maximum-attempts",
+    "type": "java.lang.Long",
+    "description": "A description for 'feign.client.retry.maximum-attempts'"
+  },
+  {
+    "name": "feign.client.retry.maximum-period",
+    "type": "java.lang.Long",
+    "description": "A description for 'feign.client.retry.maximum-period'"
+  },
+  {
+    "name": "feign.client.retry.backoff-period",
+    "type": "java.lang.Long",
+    "description": "A description for 'feign.client.retry.backoff-period'"
+  }
+]}

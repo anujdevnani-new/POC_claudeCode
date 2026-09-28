@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${AGILERY_DATABASE_HOST}:5432/${AGILERY_DATABASE_NAME}
+    username: ${AGILERY_DATABASE_USERNAME}
+    password: ${AGILERY_DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_schema: ${AGILERY_DATABASE_SCHEMA}

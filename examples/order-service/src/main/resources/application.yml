@@ -1,0 +1,60 @@
+spring:
+    profiles:
+        active: ${AGILERY_ACTIVE_PROFILE:default}
+
+    application:
+        name: Example Service
+
+    # This section defines the defaults for the data source
+    datasource:
+        username: ${AGILERY_DATABASE_USERNAME:sa}
+        password: ${AGILERY_DATABASE_PASSWORD:pass}
+
+    # This section defines defauilts for the jackson JSON library
+    jackson:
+        default-property-inclusion: NON_NULL
+
+    # This section defines defaulits for the feign client
+    cloud:
+        openfeign:
+            client:
+                config:
+                    default:
+                        # url: http://remote-service.com
+                        connect-timeout: 10000
+                        read-timeout: 20000
+                        logger-level: full
+#                        error-decoder: ai.agilery.order.config.CustomErrorDecoder
+#                        retryer: ai.agilery.order.config.CustomRetryer
+#                        defaultQueryParameters:
+#                            query: queryValue
+#                        defaultRequestHeaders:
+#                            header: headerValue
+#                        requestInterceptors:
+#                            - com.example.FooRequestInterceptor
+#                        responseInterceptor: com.example.BazResponseInterceptor
+#                        dismiss404: false
+#                        encoder: com.example.SimpleEncoder
+#                        decoder: com.example.SimpleDecoder
+#                        contract: com.example.SimpleContract
+#                        capabilities:
+#                            - com.example.FooCapability
+#                            - com.example.BarCapability
+#                        queryMapEncoder: com.example.SimpleQueryMapEncoder
+#                        micrometer: true
+
+# Defaults for embedded HTTP server
+server:
+    port: ${AGILERY_PORT_NUMBER:8080}
+
+# Feign client retry configuration parameters
+feign:
+  client:
+    retry:
+      maximum-attempts: 3
+      backoff-period: 2000
+      maximum-period: 30000
+
+
+springdoc:
+  show-actuator: true
